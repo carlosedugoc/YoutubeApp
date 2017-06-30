@@ -22,7 +22,19 @@ export class HomeComponent implements OnInit {
 
   verVideo(video:any){
     this.videoSel = video;
-    $('#myModal').modal()
+    $('#myModal').modal();
+  }
+
+  cerrarModal(){
+    this.videoSel = null;
+    $('#myModal').modal('hide');
+  }
+
+  cargarMas(){
+    this.ys.getVideos()
+          .subscribe(videos =>{
+            this.videos.push.apply(this.videos,videos);
+          })
   }
 
 }

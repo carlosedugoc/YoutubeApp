@@ -14,12 +14,18 @@
       </div>
     </div>
   </div>
+  <button (click)="cargarMas()" type="button" class="btn btn-primary btn-block">Cargar más videos</button>
 </div>
 
 
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" 
+      tabindex="-1" role="dialog" 
+      aria-labelledby="exampleModalLabel" 
+      aria-hidden="true"
+      data-backdrop="static"
+      data-keyboard="false" >
   <div class="modal-dialog" role="document">
     <div class="modal-content" *ngIf="videoSel">
       <div class="modal-header">
@@ -32,7 +38,7 @@
         <iframe width="100%" height="300" [src]="videoSel.resourceId.videoId | videoYoutube" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar Modal</button>
+        <button (click)="cerrarModal()" type="button" class="btn btn-primary">Cerrar Modal</button>
       </div>
     </div>
   </div>

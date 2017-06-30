@@ -19,6 +19,10 @@ export class YoutubeService {
     params.set('maxResults','10');
     params.set('key',this.apikey);
 
+    if(this.nextPageToken){
+      params.set('pageToken',this.nextPageToken);
+    }
+
     return this.http.get(url, { search:params } ).map(res=>{
       console.log(res.json());
       this.nextPageToken = res.json().nextPageToken
