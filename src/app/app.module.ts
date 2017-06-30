@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-import { YoutubeService } from './services/youtube.service'
+import { YoutubeService } from './services/youtube.service';
+import { VideoYoutubePipe } from './pipes/video-youtube.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    VideoYoutubePipe
   ],
   imports: [
     BrowserModule,
